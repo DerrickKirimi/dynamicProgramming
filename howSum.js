@@ -1,11 +1,11 @@
 const howSum = (targetSum, numbers, memo = {}) => {
     if (targetSum in memo) return memo[targetSum];
-    if (targetSum===0) return [];
+    if (targetSum===0) return []; 
     if (targetSum<0) return null;
 
     for (let num of numbers){
         const remainder  = targetSum - num;
-        const remainderResult = howSum(remainder, numbers, memo);
+        const remainderResult = howSum(remainder, numbers, memo); //add the results to an array
         if (remainderResult != null){
       memo[targetSum] = [ ... remainderResult, num];
       return memo[targetSum];
@@ -18,3 +18,4 @@ const howSum = (targetSum, numbers, memo = {}) => {
 console.log(howSum(7, [2,3]));
 console.log(howSum(7, [2,4]));
 console.log(howSum(300, [7,14]));
+

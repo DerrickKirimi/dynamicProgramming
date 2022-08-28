@@ -1,4 +1,4 @@
-const fib = (n, memo = {}) => { //javascript function is const and uses lambda with =>
+const fib = (n, memo = {}) => { 
     if (n in memo) return memo[n]; //index memo using key n
     if (n<=2) return 1; //base case
     memo[n] = fib(n-1, memo) + fib(n-2, memo); //store results of every fib in memo for access in subsequent calls

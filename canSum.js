@@ -1,11 +1,11 @@
 const canSum = (targetSum, numbers, memo = {}) => {
-    if (targetSum===0) return true; //arg #1 is targetSum now and remainder on subsequent calls
+    if (targetSum===0) return true; //base case.Remainder = 0
     if (targetSum in memo) return memo[targetSum];
     if (targetSum<0) {return false};
-    for (let num of numbers) { //keyword of
-        const remainder = targetSum - num; //
+    for (let num of numbers) { 
+        const remainder = targetSum - num;
         if (canSum(remainder, numbers, memo)===true){ 
-            memo[targetSum] = true;
+            memo[targetSum] = true; //Key-(Boolean)value
             return true;
         }
     }
